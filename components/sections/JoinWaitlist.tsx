@@ -276,24 +276,49 @@ const JoinWaitlist = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.6 }}
                   >
-                    <LiquidButton
-                      variant="primary"
-                      className="w-full py-6 text-xl"
+                    <motion.button
+                      // onClick={onClick}
+                      whileHover={{
+                        scale: 1.05,
+                        rotateX: 5,
+                        rotateY: 5,
+                      }}
+                      whileTap={{
+                        scale: 0.95,
+                        rotateX: -5,
+                        rotateY: -5,
+                      }}
+                      className={`
+        relative liquid-button
+        px-8 py-4 rounded-full
+        font-inter font-semibold text-md
+        transform-style-3d perspective-1000
+        transition-all duration-300
+        overflow-hidden bg-gradient-to-r from-[#27AE60] to-[#2ECC71] text-white neon-glow
+        
+      `}
                     >
-                      {isLoading ? (
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{
-                            duration: 1,
-                            repeat: Infinity,
-                            ease: "linear",
-                          }}
-                          className="w-6 h-6 border-2 border-white border-t-transparent rounded-full"
-                        />
-                      ) : (
-                        "Join the Waitlist"
-                      )}
-                    </LiquidButton>
+                      {/* Liquid wave effect */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: "100%" }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                      />
+
+                      {/* Content */}
+                      <span className="relative z-10 flex items-center gap-2">
+                        Join the waitlist
+                      </span>
+
+                      {/* Ripple effect */}
+                      <motion.div
+                        className="absolute inset-0 rounded-full border-2 border-white/30"
+                        initial={{ scale: 0, opacity: 1 }}
+                        whileHover={{ scale: 1.2, opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                      />
+                    </motion.button>
                   </motion.div>
                 </form>
 

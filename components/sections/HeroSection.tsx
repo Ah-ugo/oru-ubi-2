@@ -82,8 +82,8 @@ const HeroSection = () => {
 
             <HolographicText>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Revolutionizing <span className="text-[#27AE60]">Farming</span>{" "}
-                with AI
+                ORU-UBI <span className="text-[#27AE60]">From</span> Soil to
+                Soul
               </h1>
             </HolographicText>
 
@@ -93,9 +93,8 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Harness the power of artificial intelligence to optimize crop
-              yields, reduce waste, and build sustainable farming practices for
-              the future.
+              Every sunrise brings hope to millions of Nigerian farmers. We're
+              here to turn that hope into harvest, that dream into reality.
             </motion.p>
 
             <motion.div
